@@ -7,7 +7,7 @@
 }
 
 body{
-background: url('./background.jpg')
+background: url('/background.jpg')
 }
 
 .delete {
