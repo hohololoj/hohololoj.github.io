@@ -2,27 +2,24 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body{
-background: url('/background.jpg')
-}
-
-.delete {
+  box-sizing: border-box;
+  padding-left: 10px;
   font-family: 'Montserrat';
-  font-size: 16px;
-  gap: 16px;
-  width: 100%;
-  height: auto;
-  padding: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
-/*# sourceMappingURL=style.css.map */
+
+body {
+  background: url("./background.jpg");
+}
+
+.task {
+  margin-top: 30px;
+}
+
+.question {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.answer {
+  color: rgb(26, 26, 26);
+}
