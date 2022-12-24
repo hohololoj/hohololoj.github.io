@@ -9,8 +9,656 @@
     <link rel="shortcut icon" href="./favicon.ico">
 </head>
 <body>
-    <div class="delete">
-        <a href="https://drive.google.com/file/d/1lMYIEiQGy5g33lMWmTcguaKly6q0s-cC/view?usp=sharing">Ссылка</a>
+    <input type="text" placeholder="искать" class="search-input">
+    <button class="button-clear">Очистить</button>
+    <script>
+        const searchInput = document.getElementsByClassName('search-input')[0];
+        const tasks = document.getElementsByClassName('task');
+        const buttonClear = document.getElementsByClassName('button-clear')[0];
+        buttonClear.addEventListener('click', function(){
+            let event = new Event('input');
+            searchInput.value = '';
+            searchInput.dispatchEvent(event);
+        })
+        searchInput.addEventListener('input', function(){
+            let query = searchInput.value;
+            let regex = new RegExp(`${query}`, `i`);
+            for(let i = 0; i < tasks.length; i++){
+                let thisTask_content = tasks[i].getElementsByClassName('question')[0].innerHTML;
+                console.log(regex, thisTask_content, regex.test(thisTask_content))
+                if(!regex.test(thisTask_content)){
+                    tasks[i].style.display = 'none';
+                }
+                else{
+                    tasks[i].style.display = 'block';
+                }
+            }
+        })
+    </script>
+    <div class="task">
+        <div class="question">
+            1) Предоставляющий свои ресурсы пользователям сети компьютер – это:
+        </div>
+        <div class="answer">
+            Сервер
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            2) Центральная машина сети называется:
+        </div>
+        <div class="answer">
+            Сервером
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            3) Обобщенная геометрическая характеристика компьютерной сети – это:
+        </div>
+        <div class="answer">
+            Топология сети
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            4) Глобальной компьютерной сетью мирового уровня является:
+        </div>
+        <div class="answer">
+            WWW
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            5) Основными видами компьютерных сетей являются сети:
+        </div>
+        <div class="answer">
+            локальные, глобальные, региональные
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            6) Протокол компьютерной сети - совокупность:
+        </div>
+        <div class="answer">
+            Правил, регламентирующих прием-передачу, активацию данных в сети
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            7) Основным назначением компьютерной сети является:
+        </div>
+        <div class="answer">
+            Совместное удаленное использование ресурсов сети сетевыми пользователям
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            8) Узловым в компьютерной сети служит сервер:
+        </div>
+        <div class="answer">
+            Связывающие остальные компьютеры сети
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            9) К основным компонентам компьютерных сетей можно отнести все перечисленное:
+        </div>
+        <div class="answer">
+            Сервер, клиентскую машину, операционную систему, линии
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            10) Первые компьютерные сети:
+        </div>
+        <div class="answer">
+            ARPANET, ETHERNET
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            11) Передачу всех данных в компьютерных сетях реализуют с помощью:
+        </div>
+        <div class="answer">
+            Сетевых протоколов
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            12) Обмен информацией между компьютерными сетями осуществляют всегда посредством:
+        </div>
+        <div class="answer">
+            Независимых небольших наборов данных (пакетов)
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            13) Каналами связи в компьютерных сетях являются все перечисленное в списке:
+        </div>
+        <div class="answer">
+            Спутниковая связь, оптоволоконные кабели, телефонные сети, радиорелейная связь
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            14) Компьютерная сеть – совокупность:
+        </div>
+        <div class="answer">
+            Компьютеров, протоколов, сетевых ресурсов
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            15) В компьютерной сети рабочая станция – компьютер:
+        </div>
+        <div class="answer">
+            Стационарный
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            16) Указать назначение компьютерных сетей:
+        </div>
+        <div class="answer">
+            Использовать ресурсы соединяемых компьютеров сети, усиливая возможности каждого
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            17) Составляющие компьютерной сети:
+        </div>
+        <div class="answer">
+            Серверы, протоколы, клиентские машины, каналы связи
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            18) Локальная компьютерная сеть – сеть, состоящая из компьютеров, связываемых в рамках:
+        </div>
+        <div class="answer">
+            одного учреждения (его территориального объединения)
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            19) Сетевое приложение – приложение:
+        </div>
+        <div class="answer">
+            каждая часть которого выполнима на каждом сетевом компьютере
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            20) Наиболее полно, правильно перечислены характеристики компьютерной сети в списке:
+        </div>
+        <div class="answer">
+            Компьютеры, соединенные общими программными, сетевыми ресурсами, протоколами
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            21) Сеть, разрабатываемая в рамках одного учреждения, предприятия – сеть:
+        </div>
+        <div class="answer">
+            Локальная
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            22) Маршрутизатор – устройство, соединяющее различные:
+        </div>
+        <div class="answer">
+            Компьютерные сети
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            23) Локальную компьютерную сеть обозначают:
+        </div>
+        <div class="answer">
+            LAN
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            24) Глобальную компьютерную сеть обозначают:
+        </div>
+        <div class="answer">
+            WAN
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            25) Соединение нескольких сетей дает:
+        </div>
+        <div class="answer">
+            Межсетевое объединение
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            26) Основной (неделимой) единицей сетевого информационного обмена является:
+        </div>
+        <div class="answer">
+            Пакет
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            27) Часть пакета, где указаны адрес отправителя, порядок сборки блоков (конвертов) данных на компьютере получателя называется:
+        </div>
+        <div class="answer">
+            Заголовком
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            28) Передача-прием данных в компьютерной сети может происходить
+        </div>
+        <div class="answer">
+            Как последовательно, так и параллельно
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            29) Компьютерная сеть должна обязательно иметь:
+        </div>
+        <div class="answer">
+            Протокол
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            30) Скорость передачи данных в компьютерных сетях измеряют обычно в:
+        </div>
+        <div class="answer">
+            Бит/сек
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            31) Сеть, где нет специально выделяемого сервера называется:
+        </div>
+        <div class="answer">
+            Одноранговой (пиринговой)
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            32) Выделенным называется сервер:
+        </div>
+        <div class="answer">
+            Функционирующий лишь как сервер
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            33) Сервер, управляющий клиентским доступом к файлам называется:
+        </div>
+        <div class="answer">
+            Файл-сервером
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            34) Сервер для реализации прикладных клиентских приложений называется:
+        </div>
+        <div class="answer">
+            Сервером приложений
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            35) Серверы для передачи-приема e-mail называют:
+        </div>
+        <div class="answer">
+            Почтовым
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            36) Поток сетевых сообщений определяется:
+        </div>
+        <div class="answer">
+            Трафиком
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            37) Правильно утверждение "Звезда"
+        </div>
+        <div class="answer">
+            Топологию «Дерево» можно собрать из нескольких топологий «Звезда»
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            38) Сетевая топология определяется способом, структурой:
+        </div>
+        <div class="answer">
+            Соединения узлов каналами сетевой связи
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            39)	Доступом к сети называют:
+        </div>
+        <div class="answer">
+            взаимодействие станции (узла сети) со средой передачи данных для обмена информацией с другими станциями;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            40) Конфликтом называется:
+        </div>
+        <div class="answer">
+            ситуация, при которой две или более станции "одновременно" пытаются захватить линию;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            41) Дискретная модуляция это…
+        </div>
+        <div class="answer">
+            процесс представления аналоговой информации в дискретной форме.
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            42) Коммуникационный протокол описывающий формат пакета данных называется:
+        </div>
+        <div class="answer">
+            IP
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            43) Метод потенциального кодирования NRZ это…
+        </div>
+        <div class="answer">
+            метод без возвращения к нулю;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            44) Маршрутизация это…
+        </div>
+        <div class="answer">
+            это процесс передачи данных с одного ПК на другой ПК, когда эти ПК находятся в разных сетях;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            45) Какие способы маршрутизации существуют:
+        </div>
+        <div class="answer">
+            централизованная, распределенная, смешанная;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            46) Компьютерная сеть это …
+        </div>
+        <div class="answer">
+            Система связи компьютеров или вычислительного оборудования (серверы, маршрутизаторы и другое оборудование);
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            47) Узел сети, с помощью которого соединяются две сети построенные по одинаковой технологии:
+        </div>
+        <div class="answer">
+            мост.
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            48) Сервер-это?
+        </div>
+        <div class="answer">
+            мощный компьютер, к которому подключаются остальные компьютеры;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            49) В компьютерной сети Интернет транспортный протокол ТСР обеспечивает:
+        </div>
+        <div class="answer">
+            способ передачи информации по заданному адресу
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            50) Компьютер, подключённый к Интернету, обязательно должен иметь:
+        </div>
+        <div class="answer">
+            IP – адрес;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            51) Как по-другому называют корпоративную сеть:
+        </div>
+        <div class="answer">
+            Сотраслевая
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            52) Домен-это...
+        </div>
+        <div class="answer">
+            часть адреса, определяющая адрес компьютера пользователя в сети
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            53) Провайдер – это:
+        </div>
+        <div class="answer">
+            владелец узла сети, с которым заключается договор на подключение к его узлу;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            54) Сетевой шлюз это:
+        </div>
+        <div class="answer">
+            аппаратный маршрутизатор или программное обеспечение для сопряжения компьютерных сетей, использующих разные протоколы.
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            55) Коммутация – это:
+        </div>
+        <div class="answer">
+            процесс соединения абонентов коммуникационной сети через транзитные узлы.
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            56) В зависимости от направления возможной передачи данных способы передачи данных по линии связи делятся на следующие типы:
+        </div>
+        <div class="answer">
+            дуплексный, полудуплексный, симплексный;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            57) При частотном методе уплотнении происходит:
+        </div>
+        <div class="answer">
+            передача информационного потока по физическому каналу на соответствующей частоте – поднесущей.
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            58) В функции канального уровня входит:
+        </div>
+        <div class="answer">
+            Сформирование кадра, контроль ошибок и повышение достоверности, обеспечение кодонезависимой передачи, восстановление исходной последовательности блоков на приемной стороне, управление потоком данных на уровне звена, устранение последствий потерь или дублирования кадров;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            59) Управлением доступа к среде называют:
+        </div>
+        <div class="answer">
+            это установление последовательности, в которой станции получают доступ к среде передачи данных;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            60) Типичная среда передачи данных в ЛВС это…
+        </div>
+        <div class="answer">
+            отрезок (сегмент) коаксиального кабеля;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            61) Аналоговая модуляция это…
+        </div>
+        <div class="answer">
+            передача дискретных данных по каналам связи на основе последовательности прямоугольных импульсов;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            62) Программа, взаимодействующая с сетевым адаптером называется:
+        </div>
+        <div class="answer">
+            сетевой драйвер
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            63) Метод потенциального кодирования AMI это…
+        </div>
+        <div class="answer">
+            метод биполярного кодирования с альтернативной инверсией;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            64) Алгоритм маршрутизации это…
+        </div>
+        <div class="answer">
+            это правило назначения выходной линии связи данного узла связи ТКС для передачи пакета, базирующегося на информации, содержащейся в заголовке пакета (адреса отправителя и получателя), и информации о загрузке этого узла (длина очередей пакетов) и, возможно, ТКС в целом;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            65) Какие методы маршрутизации существуют:
+        </div>
+        <div class="answer">
+            простая, фиксированная, адаптивная.
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            66) Сервер, служащий для хранения файлов, которые используются всеми рабочими станциями называется:
+        </div>
+        <div class="answer">
+            файловый сервер;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            67) Информация в компьютерных сетях передается по каналам связи в виде отдельных:
+        </div>
+        <div class="answer">
+            пакетов.
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            68) Основными требованиями, предъявляемыми к алгоритму маршрутизации являются:
+        </div>
+        <div class="answer">
+            оптимальность выбора маршрута, простота реализации, устойчивость, быстрая сходимость, гибкость реализации;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            69)  Для соединения компьютеров в сетях используются кабели различных типов. По какому из них передаётся информация, закодированная в пучке света.
+        </div>
+        <div class="answer">
+            оптико – волоконный.
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            70) Задан адрес электронной почты в сети Интернет: user_name@mtu-net.ru. Каково имя домена верхнего уровня?
+        </div>
+        <div class="answer">
+            ru ;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            71) Как называется узловой компьютер в сети:
+        </div>
+        <div class="answer">
+            устрой­ство передачи информации только в нутрии локальной сети;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            72) Модем это…
+        </div>
+        <div class="answer">
+            устрой­ство передачи информации от одного компьютера к другому по­средством использования телефонных линий;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            73) Брандмауэр – это:
+        </div>
+        <div class="answer">
+            встроенный межсетевой экран;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            74) Сетевой шлюз это:
+        </div>
+        <div class="answer">
+            аппаратный маршрутизатор или программное обеспечение для сопряжения компьютерных сетей, использующих разные протоколы.
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            75) Какие схемы коммутации абонентов в сетях существуют:
+        </div>
+        <div class="answer">
+            коммутация каналов, ячеек, сообщений, пакетов;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            76) Коммутация пакетов это:
+        </div>
+        <div class="answer">
+            техника коммутации абонентов, которая была специально разработана для эффективной передачи компьютерного трафика;
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            77) При уплотнении по поляризации происходит:
+        </div>
+        <div class="answer">
+            уплотнение потоков информации с помощью оптических несущих, имеющих линейную поляризацию.
+        </div>
+    </div>
+    <div class="task">
+        <div class="question">
+            78) Байт-ориентированные протоколы обеспечивают:
+        </div>
+        <div class="answer">
+            управление передачей данных, представляемых байтами;
+        </div>
     </div>
 </body>
 </html>
+
