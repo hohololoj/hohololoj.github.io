@@ -25,7 +25,6 @@
             let regex = new RegExp(`${query}`, `i`);
             for(let i = 0; i < tasks.length; i++){
                 let thisTask_content = tasks[i].getElementsByClassName('question')[0].innerHTML;
-                console.log(regex, thisTask_content, regex.test(thisTask_content))
                 if(!regex.test(thisTask_content)){
                     tasks[i].style.display = 'none';
                 }
